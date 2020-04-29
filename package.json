@@ -25,7 +25,8 @@
   },
   "scripts": {
     "dev": "webpack-dev-server --open --config build/webpack.dev.js",
-    "build": "webpack --config build/webpack.prod.js",
+    "build": "webpack --config build/webpack.prod.js && cp -R dist/. ../exclub-spreadsheets/app/public/xspreadsheets",
+    "buildOLD": "webpack --config build/webpack.prod.js",
     "build-locale": "webpack --config build/webpack.locale.js",
     "lint": "./node_modules/eslint/bin/eslint.js src",
     "test": "nyc ./node_modules/mocha/bin/mocha --require @babel/register test/*",
