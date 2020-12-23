@@ -274,6 +274,7 @@ function setStyleBorders({ mode, style, color }) {
 }
 
 function getCellRowByY(y, scrollOffsety) {
+
   const { rows } = this;
   const fsh = this.freezeTotalHeight();
   // console.log('y:', y, ', fsh:', fsh);
@@ -553,6 +554,7 @@ export default class DataProxy {
 
   // state: input | finished
   setSelectedCellText(text, state = 'input') {
+    console.log("setSelectedCellText", text);
     const { autoFilter, selector, rows } = this;
     const { ri, ci } = selector;
     let nri = ri;
@@ -942,6 +944,8 @@ export default class DataProxy {
       rows.setCellText(ri, ci, text);
       this.change(this.getData());
     }
+
+    console.log("this.getData()", this.getData());
     // validator
     validations.validate(ri, ci, text);
   }

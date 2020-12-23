@@ -73,6 +73,7 @@ export default class AutoFilter {
   }
 
   getData() {
+
     if (this.active()) {
       const { ref, filters, sort } = this;
       return { ref, filters: filters.map(it => it.getData()), sort };

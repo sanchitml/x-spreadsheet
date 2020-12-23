@@ -27,7 +27,7 @@
         };
       }
       const rows = {
-        len: 80,
+        len: 1000,
         1: {
           cells: {
             0: { text: 'testingtesttestetst' },
@@ -50,7 +50,7 @@
       // x_spreadsheet.locale('zh-cn');
       var xs = x_spreadsheet('#x-spreadsheet-demo', {showToolbar: true, showGrid: true})
         .loadData([{
-          freeze: 'B3',
+          freeze: 'D4',
           styles: [
             {
               bgcolor: '#f4f5f8',
@@ -85,7 +85,7 @@
 
       setTimeout(() => {
         // xs.loadData([{ rows }]);
-        xs.cellText(14, 3, 'cell-text').reRender();
+        // xs.cellText(14, 3, 'cell-text').reRender();
       }, 5000);
     }
   </script>

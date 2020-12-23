@@ -10,6 +10,7 @@ import './index.less';
 
 class Spreadsheet {
   constructor(selectors, options = {}) {
+    console.log("EXCLUB WIP");
     let targetEl = selectors;
     this.options = options;
     this.sheetIndex = 1;
@@ -59,6 +60,16 @@ class Spreadsheet {
   }
 
   loadData(data) {
+    console.log("ASDASDASD ", data);
+    console.log("DDDD ", this.datas);
+
+    var lol = this.datas;
+    var lols = this.datas;
+    setTimeout(function (lol) {
+      console.log(lol);
+      console.log(lols);
+    }, 4000);
+
     const ds = Array.isArray(data) ? data : [data];
     this.bottombar.clear();
     this.datas = [];

@@ -2,6 +2,7 @@ import { xy2expr, expr2xy } from './alphabet';
 
 class CellRange {
   constructor(sri, sci, eri, eci, w = 0, h = 0) {
+
     this.sri = sri;
     this.sci = sci;
     this.eri = eri;

@@ -34,7 +34,11 @@ function throttle(func, wait) {
   };
 }
 
+
+//@ Cell selection via Arrow Keys
 function scrollbarMove() {
+  console.log("Cell selection via keyboard");
+
   const {
     data, verticalScrollbar, horizontalScrollbar,
   } = this;
@@ -473,6 +477,8 @@ function colResizerFinished(cRect, distance) {
 }
 
 function dataSetCellText(text, state = 'finished') {
+  console.log("dataSetCellTextdataSetCellText");
+
   const { data, table } = this;
   // const [ri, ci] = selector.indexes;
   if (data.settings.mode === 'read') return;
@@ -690,6 +696,9 @@ function sheetInitEvents() {
 
   // for selector
   bind(window, 'keydown', (evt) => {
+
+    console.log("evt.keyCode", evt.keyCode);
+
     if (!this.focusing) return;
     const keyCode = evt.keyCode || evt.which;
     const {

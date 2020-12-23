@@ -301,8 +301,18 @@ export default class Selector {
     this.range = cellRange;
     this.resetAreaOffset();
     this.el.show();
+
+    console.log("start: ", ri+","+ci);
   }
 
+  1. To build project run `npm run build`. It will build the files in dist directory
+  2. You can now seee the production locally by using `live-server` command if you have installed `npm run -g live-server`. Otherwise you can use any
+  static file serving server.
+  3. To start static server for production build, `cd website/dist`.
+  4. `npm install -g live-server`;
+  5. `live-server`. it will open `127.0.0.1:8080`
+  5a. OR `live-server --port=80`
+  5b. OR  `sudo live-server --port=80 --host=localhost`
   setEnd(ri, ci, moving = true) {
     const { data, lastri, lastci } = this;
     if (moving) {
@@ -312,6 +322,8 @@ export default class Selector {
     }
     this.range = data.calSelectedRangeByEnd(ri, ci);
     setAllAreaOffset.call(this, this.data.getSelectedRect());
+
+    console.log("end: ", ri+","+ci);
   }
 
   reset() {
